@@ -1,0 +1,43 @@
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>WeatherApp</title>
+        <!-- font awesome will be used here for icon generation -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous"/>
+        <!-- custom css link page-->
+        <link rel ="stylesheet" href="style.css">
+        <!-- custom js link page -->
+        <script defer src="app.js"></script>  
+    </head>
+    <body data-theme="">
+
+        <div class ="weatherContainer">
+            <div class="toggle-container">
+                <input type="checkbox" id="switch" name="theme" /><label for="switch">Toggle</label>
+            </div>
+            <div class ="title-logo">
+                <img src="images/logo.png" class ="logo-weather">
+            </div>
+            <div class ="title"><p>Weather App</p></div>
+            <div class ="fields">
+                <div class ="search-location">
+                    <input type = "search-location" placeholder="Enter The City" class="location-input">
+                </div>
+            </div>
+            <button class="check-weather">Search</button>
+            <!-- weather content will dynamically added through js implementation -->
+            <div class="weather-content">
+                <div class="celcius-circle">
+                    <p class="celcius">70&deg;C</p>
+                    <div class="icon-temp">
+                        <i class="fa fa-thermometer-half" aria-hidden="true"></i>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </body>
+</html>

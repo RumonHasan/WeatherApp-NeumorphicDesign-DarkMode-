@@ -1,0 +1,251 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    --text-color: #555;
+    --place-holder: #a7aaaf;
+    --bg: #ecf0f3;
+    --box: #cbced1;
+    --box-shadow: #ffffff;
+    --button: #24cfaa;
+    --button-active: #57e6c7;
+    --color-headings: #0077FF;
+    --logo-shadow: #5f5f5f;
+}
+
+body[data-theme='dark']{
+    --text-color: #cbced1;
+    --place-holder: #181818;
+    --place-holder-text: #535353;
+    --bg: #333333;
+    --box: rgb(36, 36, 36);
+    --box-shadow: #3a3a3a;
+    --button: #3694FF;
+    --button-active: #7bb4ff;
+    --color-headings-dark: #3694FF;
+    --logo-shadow: #c0bdbd;
+}
+body{
+    margin: 0;
+    overflow:hidden;
+    font-family:sans-serif;
+    font-weight: 800;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    color:var(--text-color);
+    background: var(--bg);
+}
+
+.weatherContainer{
+    width: 430px;
+    height: 700px;
+    padding: 60px 35px 35px 35px;
+    border-radius: 40px;
+    background: var(--bg);
+    box-shadow: 13px 13px 20px var(--box), /* neumorphic style weather */
+                -13px -13px 20px var(--box-shadow);
+
+}
+.title-logo{
+    display:flex;
+    align-items: center;
+    margin-top:-10%;
+    margin-left: 14%;
+}
+
+.logo-weather{
+    height: 130px;
+    width: 200px;
+    border-radius: 50%;
+    margin:0 auto;
+    box-shadow:
+    /*logo shadow */
+      /* logo shadow */
+  0px 0px 2px var(--logo-shadow),
+  /* offset */
+  0px 0px 0px 5px var(--bg),
+  /*bottom right */
+  8px 8px 15px var(--place-holder),
+  /* top left */
+  -8px -8px 15px var(--box-shadow);
+}
+
+.title p{
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 6px;
+    color: #5f5f5f;
+}
+
+/* adding sunken effect to the search box */
+
+.fields{
+    width: 100%;
+    padding: 30px;
+}
+
+.fields input{
+    border:none;
+    outline: none;
+    background: none;
+    font-size: 20px;
+    color:var(--text-color);
+    padding: 10px;
+
+}
+
+::placeholder{
+    color: var(--place-holder-text);
+}
+
+.search-location {
+    border-radius: 25px;
+    margin-bottom: 25px;
+    box-shadow: inset 8px 8px 8px var(--box),
+                inset -8px -8px 8px var(--box-shadow);
+
+}
+
+/* input design box ends here */
+
+.check-weather{
+  margin-left: 25px;
+  margin-top: -30px;
+  outline: none;
+  border:none;
+  cursor: pointer;
+  width:85%;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color:var(--bg);
+  text-align: center;
+  background: var(--button);
+  box-shadow: 3px 3px 8px var(--box),
+              -3px -3px 8px var(--box-shadow);
+}
+
+.check-weather:hover{
+    background-color: var(--button-active);
+}
+
+.check-weather:active{ /* default class clicked*/
+    transform: translateY(4px); /* when clicked the button moves down 4px in the y axis in order to create an imageof moving down */
+    background-color: var(--button-active);
+    box-shadow: 0 5px;
+}
+
+/* weather content design */
+
+.weather-content{
+    width: 300px;
+    height: 300px;
+    margin-left: 7.5%;
+    margin-top: 4%;
+    border-radius: 20px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    box-shadow: 13px 13px 20px var(--box), /* neumorphic style weather */
+                -13px -13px 20px var(--box-shadow);
+}
+
+/* celcius circle */
+
+.celcius-circle{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    margin-top: -35%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    box-shadow:   14px 13px 13px var(--box),
+                  -8px -8px 8px var(--box-shadow);
+}
+
+.celcius-circle p{
+    font-weight: bold;
+    font-size: 3.4rem;
+    color: #5baded;
+    text-shadow: inset -8px 8px 8px var(--color-headings),
+                 inset 8px -8px 8px var(--box-shadow);
+}
+
+.icon-temp .fa{
+    color: #5baded;
+    font-size: 2.4rem;
+    margin-right: -10%;
+    margin-left: 30%;
+}
+
+
+
+/* dark mode toggle container */
+
+
+.toggle-container{
+    float:right;
+    margin-right: -20px;
+    margin-top: -30px;
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 52px;
+	height: 27px;
+	background: grey;
+	float: right;
+	border-radius: 100px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: var(--color-headings-dark);
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 45px;
+}
+
+body.transition,
+body.transition *,
+body.transition *:before,
+body.transition *:after {
+  transition: all 800ms !important;
+  transition-delay: 0 !important;
+}
+ /* dark mode design code ends here */
+
+
+
+
